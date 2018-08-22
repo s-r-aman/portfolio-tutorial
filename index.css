@@ -4,13 +4,29 @@
   box-sizing: border-box;
 }
 html {
-  font: normal 300 20px/1.8 "Work Sans", Helvetica, Arial, sans-serif;
+  font: normal 300 20px/1.8 'Work Sans', Helvetica, Arial, sans-serif;
 }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
 .header {
   background: black;
   height: 100vh;
   width: 100%;
   position: fixed;
+}
+
+.wrapper {
+  position: relative;
+  top: 100vh;
 }
 
 .header-background {
@@ -22,26 +38,26 @@ html {
 }
 
 .header-navigation {
-  position: absolute;
-  top: 8%;
-  right: 8%;
+  /* position: absolute; */
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 0px;
 }
 
-.header-navigation ul {
-  list-style: none;
-  display: flex;
-}
-.header-navigation ul li {
-  padding: 20px;
-}
-.header-navigation ul a {
+.header-navigation_links {
   text-decoration: none;
   color: #999;
   display: block;
+  padding: 0px 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.header-navigation_links:hover {
+  color: rgb(240, 240, 240);
 }
 
 .header-content {
-  position: absolute;
+  /* position: absolute; */
   top: 200px;
   color: white;
 }
@@ -50,7 +66,7 @@ html {
   font-family: Poppins, Helvetica, Arial, sans-serif;
   font-size: 96px;
   line-height: 1.1;
-  padding: 14%;
+  /* padding: 14%; */
   /* padding-left: 14%; */
 }
 
@@ -67,19 +83,14 @@ html {
   text-decoration: none;
 }
 .header-btn {
-  position: absolute;
-  top: 550px;
-  left: 14%;
+  /* position: absolute; */
+  padding: 70px 0px;
 }
 
 .about {
-  position: relative;
-  top: 85vh;
-  display: flex;
   clip-path: polygon(0 10vh, 100% 0, 100% 100%, 0% 100%);
-  height: 120vh;
   background-color: white;
-  padding-top: 300px;
+  padding: 200px 0px;
 }
 
 .about-heading {
@@ -87,11 +98,9 @@ html {
   font-size: 66px;
   line-height: 1.1;
   flex: 1;
-  padding-left: 10%;
 }
 
 .about-text {
-  padding-right: 10%;
   flex: 1;
 }
 .light-para {
@@ -105,24 +114,20 @@ html {
 }
 
 .about-btn {
-  position: absolute;
-  top: 750px;
-  right: 640px;
+  /* position: absolute; */
+  padding: 50px 0;
 }
 
 .projects {
-  position: relative;
-  top: 65vh;
   clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0% 100%);
   background-color: #666;
-  padding-bottom: 400px;
+  padding-bottom: 200px;
+  position: relative;
+  top: -100px;
 }
 
 .project1 {
-  display: flex;
   padding-top: 300px;
-  position: relative;
-  height: 140vh;
 }
 
 .project-heading {
@@ -130,15 +135,13 @@ html {
   font-size: 66px;
   line-height: 1.1;
   flex: 1;
-  padding-left: 10%;
+  padding-left: 8%;
   color: white;
   margin-top: 200px;
 }
 
 .project-btn {
-  position: absolute;
-  top: 850px;
-  left: 10%;
+  padding: 100px 0px 0px 30px;
 }
 
 .project1-img {
@@ -159,10 +162,7 @@ html {
 }
 
 .project2 {
-  display: flex;
-  padding-top: 300px;
-  position: relative;
-  height: 140vh;
+  padding-top: 200px;
 }
 .project2-img {
   background-image: url(./img/nerddiary-blog.jpg);
@@ -173,10 +173,7 @@ html {
 }
 
 .project3 {
-  display: flex;
-  padding-top: 300px;
-  position: relative;
-  height: 140vh;
+  padding: 200px 0px 0 0;
 }
 
 .project3-img {
@@ -188,10 +185,7 @@ html {
 }
 
 .project4 {
-  display: flex;
-  padding-top: 300px;
-  position: relative;
-  height: 140vh;
+  padding-top: 200px;
 }
 
 .project4-img {
@@ -203,13 +197,12 @@ html {
 }
 
 footer {
-  width: 100%;
-  height: 60vh;
-  position: relative;
-  top: 35vh;
+  height: 90vh;
 }
 
 .footer-img {
+  position: relative;
+  top: -170px;
   background-image: url(./img/footer-background-mountain.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -220,9 +213,9 @@ footer {
 }
 
 .footer-heading {
-  position: absolute;
+  /* position: absolute; */
   color: white;
-  top: 200px;
+  /* top: 200px; */
 }
 
 .footer-heading {
@@ -230,13 +223,90 @@ footer {
   font-size: 66px;
   line-height: 1.1;
   flex: 1;
-  padding-left: 30%;
+  padding: 200px 0;
   color: white;
-  margin-top: 200px;
 }
 
 .footer-btn {
-  position: absolute;
-  top: 650px;
-  left: 30%;
+  /* position: absolute; */
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 700px) {
+  .flex {
+    flex-direction: column;
+  }
+  .header-navigation {
+    /* position: absolute; */
+    justify-content: space-evenly;
+  }
+  .header-navigation_links {
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    padding: 0px 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  .header-title {
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    padding: 70px 0px;
+    line-height: 1.1;
+  }
+
+  .about {
+    clip-path: polygon(0 10vh, 100% 0, 100% 100%, 0% 100%);
+    background-color: white;
+    padding: 150px 0px;
+  }
+
+  .about-heading {
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    font-size: 38px;
+    line-height: 1.1;
+    flex: 1;
+  }
+  .about-text {
+    flex: 1;
+    padding: 30px 0px;
+  }
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    padding-top: 0px;
+  }
+  .project-heading {
+    font-size: 50px;
+  }
+  .project1-img,
+  .project2-img,
+  .project3-img,
+  .project4-img {
+    margin: 30px 0px 0px 30px;
+    height: 300px;
+    width: 92%;
+  }
+  .project-btn {
+    padding: 50px 0px 0px 10px;
+  }
+  .projects {
+    padding-bottom: 150px;
+  }
+  footer {
+    height: 77vh;
+  }
+  .footer-img {
+    top: -175px;
+  }
+  .footer-heading {
+    font-size: 50px;
+    padding: 200px 0px;
+  }
+  .footer-img {
+    height: 100vh;
+  }
 }
